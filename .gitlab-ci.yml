@@ -1,0 +1,9 @@
+stages:
+  - test
+  
+test:
+  stage: test
+  image: edbizarro/gitlab-ci-pipeline-php:7.3-alpine
+  script:
+    - composer install --prefer-dist --no-ansi --no-interaction --no-progress
+    - ./vendor/phpunit/phpunit/phpunit -v --coverage-text --colors=never --stderr
