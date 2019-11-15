@@ -1,4 +1,6 @@
 vendor/*
 doc/*
+config/*
 !config/config.ini.sample
 .phpunit.result.cache
+.htaccess
