@@ -1,0 +1,8 @@
+[app]
+debug = true
+
+[bots]
+currency[token] = "cc-test-token"
+currency[username] = "SampleCurrencyBot"
+notes[token] = "n-test-token"
+notes[username] = "SampleNoteBot"

@@ -1,6 +1,5 @@
 <?php namespace AAD\TelegramBots;
 
-use AAD\TelegramBots\Helper\Config;
 use AAD\TelegramBots\Helper\Route;
 use Respect\Validation\Validator as v;
 
