@@ -2,7 +2,7 @@
 
 use Respect\Validation\Validator as v;
 
-class Config
+class Config extends Crud
 {
     protected static $config;
 
@@ -42,19 +42,5 @@ class Config
             return (object) self::$config->{$section};
         }
         return self::$config;
-    }
-
-    public function __set($name, $value)
-    {
-        return $this->{$name} = $value;
-    }
-
-    public function __get($name)
-    {
-        if (isset($this->{$name})) {
-            return $this->{$name};
-        }
-
-        return null;
     }
 }
