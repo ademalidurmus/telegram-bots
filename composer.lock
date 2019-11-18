@@ -4,8 +4,67 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "22af5619ea7d016504b678c7dedf227e",
+    "content-hash": "dab04e254a80f25ea481e8494b23b38c",
     "packages": [
+        {
+            "name": "php-telegram-bot/inline-keyboard-pagination",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-telegram-bot/inline-keyboard-pagination.git",
+                "reference": "d8992299a54f0b9cca745256c8dbcdc4e45cc809"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-telegram-bot/inline-keyboard-pagination/zipball/d8992299a54f0b9cca745256c8dbcdc4e45cc809",
+                "reference": "d8992299a54f0b9cca745256c8dbcdc4e45cc809",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "jakub-onderka/php-parallel-lint": "^0.9.2",
+                "phpunit/phpunit": "^6.3",
+                "squizlabs/php_codesniffer": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TelegramBot\\InlineKeyboardPagination\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Armando Lüscher",
+                    "email": "armando@noplanman.ch",
+                    "homepage": "https://noplanman.ch",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Artie",
+                    "email": "log.wil.log@gmail.com",
+                    "homepage": "https://github.com/lartie",
+                    "role": "Original developer"
+                }
+            ],
+            "description": "PHP Telegram Bot InlineKeyboard Pagination",
+            "homepage": "https://github.com/php-telegram-bot/inline-keyboard-pagination",
+            "keywords": [
+                "bot",
+                "callback",
+                "inline",
+                "keyboard",
+                "pagination",
+                "query",
+                "telegram"
+            ],
+            "time": "2017-09-08T12:33:57+00:00"
+        },
         {
             "name": "respect/validation",
             "version": "1.1.x-dev",
@@ -554,12 +613,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "b85a9205e06bead6f243af7f29812d8a62e50027"
+                "reference": "8198f748870693e87fe40e19452768cef00869ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/b85a9205e06bead6f243af7f29812d8a62e50027",
-                "reference": "b85a9205e06bead6f243af7f29812d8a62e50027",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/8198f748870693e87fe40e19452768cef00869ea",
+                "reference": "8198f748870693e87fe40e19452768cef00869ea",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +668,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-11-03T06:15:39+00:00"
+            "time": "2019-11-15T18:53:04+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -806,12 +865,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "e2389334f8a98e418fabacf9376b3a637ac73d85"
+                "reference": "c27ac794f809a73bb04bcd4cdd0c33f3265921a4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/e2389334f8a98e418fabacf9376b3a637ac73d85",
-                "reference": "e2389334f8a98e418fabacf9376b3a637ac73d85",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c27ac794f809a73bb04bcd4cdd0c33f3265921a4",
+                "reference": "c27ac794f809a73bb04bcd4cdd0c33f3265921a4",
                 "shasum": ""
             },
             "require": {
@@ -881,7 +940,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2019-11-13T20:09:40+00:00"
+            "time": "2019-11-17T20:11:49+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -998,12 +1057,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "2ce6675fe77612cce2a49d0cecb4e7afead64323"
+                "reference": "16e54fbc971c14d98779b9c3b22572178ff9411f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/2ce6675fe77612cce2a49d0cecb4e7afead64323",
-                "reference": "2ce6675fe77612cce2a49d0cecb4e7afead64323",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/16e54fbc971c14d98779b9c3b22572178ff9411f",
+                "reference": "16e54fbc971c14d98779b9c3b22572178ff9411f",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1070,7 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^7.5 || ^8.0",
-                "symfony/process": "^2 || ^3.3 || ^4"
+                "symfony/process": "^2 || ^3.3 || ^4 || ^5"
             },
             "type": "library",
             "extra": {
@@ -1046,7 +1105,7 @@
                 "unidiff",
                 "unified diff"
             ],
-            "time": "2019-10-23T09:06:00+00:00"
+            "time": "2019-11-18T19:26:59+00:00"
         },
         {
             "name": "sebastian/environment",
@@ -1504,12 +1563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "ed879f1e79dc6c4be4edbe2ff37f8a67eab47daf"
+                "reference": "eb378acf7b632701a0304bb5837c4d2b69cc0729"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/ed879f1e79dc6c4be4edbe2ff37f8a67eab47daf",
-                "reference": "ed879f1e79dc6c4be4edbe2ff37f8a67eab47daf",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/eb378acf7b632701a0304bb5837c4d2b69cc0729",
+                "reference": "eb378acf7b632701a0304bb5837c4d2b69cc0729",
                 "shasum": ""
             },
             "require": {
@@ -1547,7 +1606,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2019-11-12T21:46:28+00:00"
+            "time": "2019-11-18T20:55:22+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",

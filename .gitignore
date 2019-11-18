@@ -2,5 +2,6 @@ vendor/*
 doc/*
 config/*
 !config/config.ini.sample
+data/*
+!data/storage.sqlite3.sample
 .phpunit.result.cache
-.htaccess

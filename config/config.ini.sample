@@ -1,6 +1,13 @@
 [app]
 debug = true
 
+[crypt]
+key = "Test"
+iv = "Test"
+
+[storage]
+sqlite = "/var/www/data/config.ini.sample"
+
 [bots]
 currency[token] = "cc-test-token"
 currency[username] = "SampleCurrencyBot"

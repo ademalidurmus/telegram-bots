@@ -1,7 +1,10 @@
 <?php namespace AAD\TelegramBots\App;
 
 use AAD\TelegramBots\Helper\Config;
+use AAD\TelegramBots\Helper\Language;
 use Respect\Validation\Validator as v;
+use AAD\TelegramBots\Exceptions\AuthenticationException;
+use AAD\TelegramBots\Exceptions\UnexpectedValueException;
 
 class CurrencyConverter
 {
@@ -20,19 +23,24 @@ class CurrencyConverter
     {
         $this->token = Config::get('bots')->currency['token'];
         if ($args['token'] !== sha1($this->token)) {
-            return header('HTTP/1.0 403 Permission Denied');
+            throw new AuthenticationException(Language::set([
+                "en::Authentication failed.",
+                "tr::Kimlik doğrulama işlemi başarısız oldu."
+            ], 1), 1);
         }
     }
 
     public function init($request, $args)
     {
         $url = "https://api.telegram.org/bot{$this->token}";
-        $data = file_get_contents('php://input');
-        $details = json_decode($data, true);
+        $details = json_decode($request->body, true);
         $chat_id = $details['message']['chat']['id'];
         
         if (!v::numeric()->validate($chat_id)) {
-            return header('HTTP/1.0 406 Not Acceptable');
+            throw new UnexpectedValueException(Language::set([
+                "en::Unexpected chat id.",
+                "tr::Sohbet numarası geçersiz."
+            ], 2), 2);
         }
 
         $message = self::prepareResponse($details);

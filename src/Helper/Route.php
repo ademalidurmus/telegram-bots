@@ -1,5 +1,6 @@
 <?php namespace AAD\TelegramBots\Helper;
 
+use AAD\TelegramBots\Exceptions\NotFoundException;
 use Respect\Validation\Validator as v;
 
 class Route
@@ -28,6 +29,7 @@ class Route
             $args = [];
             if ($this->checkPattern($key, $_SERVER['REQUEST_URI'], $args)) {
                 $request = (object) [
+                    'body' => file_get_contents('php://input'),
                     'pattern' => $key
                 ];
 
@@ -38,7 +40,10 @@ class Route
             }
         }
 
-        return header('HTTP/1.0 404 Not Found');
+        throw new NotFoundException(Language::set([
+            "en::Page not found.",
+            "tr::Sayfa bulunamadı."
+        ], 11), 11);
     }
 
     public function checkPattern($pattern, $request_uri, &$args)
