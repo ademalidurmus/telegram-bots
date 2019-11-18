@@ -1,7 +1,14 @@
 <?php namespace AAD\TelegramBots;
 
 use AAD\TelegramBots\Helper\Route;
+use AAD\TelegramBots\Helper\Config;
+use AAD\TelegramBots\Helper\Crypt;
 use Respect\Validation\Validator as v;
+use AAD\TelegramBots\Exceptions\NotFoundException;
+use AAD\TelegramBots\Exceptions\PermissionDeniedException;
+use AAD\TelegramBots\Exceptions\StoragePdoException;
+use AAD\TelegramBots\Exceptions\UnexpectedValueException;
+use AAD\TelegramBots\Exceptions\AuthenticationException;
 
 class App
 {
@@ -31,9 +38,26 @@ class App
 
     public function run()
     {
-        $this->register("CurrencyConverter");
-        $this->register("Notes");
+        try {
+            Crypt::setKey(Config::get('crypt')->key);
+            Crypt::setIv(Config::get('crypt')->iv);
 
-        return $this->route->run();
+            $this->register("CurrencyConverter");
+            $this->register("Notes");
+    
+            return $this->route->run();
+        } catch (UnexpectedValueException $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 406 Not Acceptable");
+        } catch (NotFoundException $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 404 Not Found");
+        } catch (PermissionDeniedException $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 403 Permission Denied");
+        } catch (AuthenticationException $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 401 Unauthorized");
+        } catch (StoragePdoException $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 500 Internal Server Error");
+        } catch (\Throwable $e) {
+            return header("{$_SERVER['SERVER_PROTOCOL']} 500 Internal Server Error");
+        }
     }
 }
